@@ -246,24 +246,77 @@ section h2 {
     color: #666;
 }
 
-/* Documentation */
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1rem;
-    margin-top: 2rem;
+/* Documentation Section */
+.documentation {
+    background-color: #fff;
 }
 
-.gallery img {
-    width: 100%;
-    /* Tetapkan tinggi tetap untuk seragam */
-    height: 150px; /* Atur tinggi sesuai keinginan */
+.documentation h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+    color: #333;
+    font-size: 2.5rem;
+}
+
+.documentation p {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #666;
+}
+
+/* Slider */
+.slider-container {
+    position: relative;
+    max-width: 100%;
+    margin: 0 auto;
+    overflow: hidden; /* Sembunyikan gambar lainnya */
     border-radius: 8px;
-    /* Gunakan object-fit: cover untuk memotong gambar agar mengisi wadah */
-    object-fit: cover;
-    display: block; /* Menghindari spasi bawah */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    height: 700px; /* Atur tinggi tetap untuk wadah */
 }
 
+.slider {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.slider img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Potong gambar agar mengisi wadah */
+    opacity: 0; /* Awalnya semua gambar tidak terlihat */
+    transition: opacity 1s ease-in-out; /* Animasi fade */
+    display: block;
+}
+
+.slider img.active {
+    opacity: 1; /* Gambar aktif menjadi terlihat */
+}
+
+/* Indikator */
+.slider-indicators {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.slider-indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #bbb;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.slider-indicator.active {
+    background-color: #FFD700; /* Kuning Gold untuk indikator aktif */
+}
 /* Partnerships Section - Grid Galeri */
 .partnerships {
     background-color: #fff;
