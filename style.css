@@ -324,7 +324,7 @@ section h2 {
     overflow: hidden; /* Sembunyikan gambar lainnya */
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    height: 900px; /* Atur tinggi tetap untuk wadah */
+    height: 800px; /* Atur tinggi tetap untuk wadah */
 }
 
 .slider {
@@ -337,7 +337,7 @@ section h2 {
     position: absolute;
     top: 0;
     left: 0;
-    width: 150%;
+    width: 100%;
     height: 100%;
     object-fit: cover; /* Potong gambar agar mengisi wadah */
     opacity: 0; /* Awalnya semua gambar tidak terlihat */
