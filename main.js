@@ -37,8 +37,8 @@ function animateCounter() {
 function initImageSlider() {
     // --- GANTI ARRAY INI DENGAN PATH FOTO DOKUMENTASI ANDA ---
     const imagePaths = [
-        'assets/dokum/Audiensi Bakesbangpol DKI Jakarta.jpg',
-        'assets/dokum/Audiensi BPBD Provinsi.jpg',
+        '/assets/dokum/Audiensi Bakesbangpol DKI Jakarta.jpg',
+        '/assets/dokum/Audiensi BPBD Provinsi.jpg',
         '/assets/dokum/Audiensi Dinas Pendidikan 2025.jpg',
         '/assets/dokum/Dokumentasi Bimbel Akses 1.jpg',
         '/assets/dokum/akses2.jpg',
