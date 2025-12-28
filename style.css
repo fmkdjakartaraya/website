@@ -415,28 +415,40 @@ section h2 {
     line-height: 1.4; /* Untuk teks panjang */
 }
 
-/* Stats */
+/* Stats (UPDATED with Flexbox) */
 .stats {
     background-color: #f8f9fa;
-    padding: 40px 0; /* Padding tetap di sini */
+    padding: 60px 20px;
 }
 
 .stats-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 kolom */
-    grid-template-rows: repeat(2, auto); /* 2 baris */
-    gap: 2rem;
+    display: flex; /* Ganti dari Grid ke Flex biar bisa center otomatis */
+    flex-wrap: wrap; /* Biar kalau layar kecil dia turun ke bawah */
+    justify-content: center; /* KUNCI: Biar item ganjil ada di tengah */
+    gap: 3rem; /* Jarak antar kotak */
     text-align: center;
 }
 
-.stat-box h3 {
-    font-size: 2.5rem;
+.stat-box {
+    flex: 1 1 300px; /* Kotak fleksibel: lebar dasar 300px, bisa membesar */
+    max-width: 400px; /* Tapi jangan lebar-lebar banget */
+    padding: 10px;
+}
+
+.stat-box h3, 
+.stat-box .counter,
+.stat-box .plus-sign {
+    font-size: 3rem; /* Ukuran angka digedein dikit biar mantap */
+    font-weight: bold;
     color: #FFD700; /* Kuning Gold */
-    margin-bottom: 0.5rem;
+    line-height: 1.2;
 }
 
 .stat-box p {
     color: #666;
+    margin-top: 10px;
+    font-size: 1rem;
+    line-height: 1.5; /* Biar teks yang panjang (no 61) enak dibaca */
 }
 
 /* Contact Section */
