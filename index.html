@@ -3,25 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Forum Mahasiswa Kedinasan Daerah Jakarta Raya">
     <title>FMKD Jakarta Raya - Gak Ada Matinye!</title>
+    
+    <link rel="icon" href="assets/headfoot/Logo FMKD Jakarta Raya.png" type="image/png">
+    
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="icon" type="/assets/headfoot/Logo FMKD Jakarta Raya.png">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
 
-    <!-- Header -->
     <header class="header">
-        <div class="container">
+        <div class="container nav-container">
             <div class="logo-container">
-                <!-- Ganti path/to/logo-fmkd.png dengan path sebenarnya ke logo Anda -->
-                <img src="/assets/headfoot/Logo FMKD Jakarta Raya.png" alt="Logo FMKD Jakarta Raya" class="logo">
+                <img src="assets/headfoot/Logo FMKD Jakarta Raya.png" alt="Logo FMKD Jakarta Raya" class="logo">
             </div>
-            <nav class="nav">
+            
+            <button class="hamburger" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav class="nav-menu">
                 <ul>
                     <li><a href="#home">Beranda</a></li>
                     <li><a href="#about">Tentang Kami</a></li>
                     <li><a href="#programs">Program</a></li>
+                    <li><a href="#membership">Anggota</a></li>
                     <li><a href="#ptk-expo">PTK Expo</a></li>
                     <li><a href="#documentation">Dokumentasi</a></li>
                     <li><a href="#partnerships">Kerjasama</a></li>
@@ -31,372 +45,322 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
     <section id="home" class="hero">
-        <div class="container">
-            <h1>FMKD JAKARTA RAYA GAK ADA MATINYE!</h1>
-            <p>Forum Mahasiswa Kedinasan Daerah Jakarta Raya - Wadah Silaturahmi, Pengembangan, dan Pengabdian.</p>
+        <div class="hero-overlay"></div>
+        <div class="container hero-content" data-aos="zoom-in" data-aos-duration="1000">
+            <h1>FMKD JAKARTA RAYA <br><span class="highlight text-glow">GAK ADA MATINYE!</span></h1>
+            <p>Wadah Silaturahmi, Pengembangan, dan Pengabdian Mahasiswa Kedinasan se-Jakarta Raya.</p>
             <div class="hero-buttons">
-                <a href="#about" class="btn btn-secondary">Pelajari Lebih Lanjut</a>
+                <a href="#about" class="btn btn-primary pulse-anim">Pelajari Lebih Lanjut</a>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="about">
+    <section id="about" class="section-padding">
         <div class="container">
-            <h2>Tentang FMKD Jakarta Raya</h2>
-            <p>Forum Mahasiswa Kedinasan Daerah Jakarta Raya (FMKD) adalah organisasi yang beranggotakan mahasiswa/taruna/praja dari Perguruan Tinggi Kedinasan (PTK) yang berasal dari Jakarta, Bogor, Depok, Tangerang, Tangerang Selatan, dan Bekasi. Sebagai bagian dari Forum Mahasiswa Kedinasan Indonesia (FMKI), FMKD menjadi wadah bagi mahasiswa kedinasan untuk saling berinteraksi dan berkolaborasi dalam hal kepemudaan dan pengabdian bagi masyarakat maupun negara.</p>
-            <p>FMKD Jakarta Raya terdiri dari dua badan, yaitu: Dewan Pengawas Daerah (Dewas) dan Dewan Pimpinan Daerah (DPD). Kedua dewan tersebut saling terikat satu sama lain berkedudukan sejajar.</p>
+            <div class="section-title" data-aos="fade-up">
+                <h2>Tentang Kami</h2>
+            </div>
+            <div class="about-content" data-aos="fade-up" data-aos-delay="100">
+                <p class="text-justify lead">Forum Mahasiswa Kedinasan Daerah Jakarta Raya (FMKD) adalah organisasi yang beranggotakan mahasiswa/taruna/praja dari Perguruan Tinggi Kedinasan (PTK) yang berasal dari Jakarta, Bogor, Depok, Tangerang, Tangerang Selatan, dan Bekasi.</p>
+                <p class="text-justify mt-1">Sebagai bagian dari FMKI, kami hadir menjadi wadah kolaborasi pemuda untuk mengabdi kepada masyarakat, bangsa, dan negara. FMKD Jakarta Raya terdiri dari dua badan: Dewan Pengawas Daerah (Dewas) dan Dewan Pimpinan Daerah (DPD).</p>
+            </div>
         </div>
     </section>
 
-<!-- Vision & Mission Section -->
-<section class="vision-mission">
-    <div class="container">
-        <h2>Visi & Misi</h2>
-        <!-- Gunakan div untuk membuat dua kolom -->
-        <div class="vm-columns">
-            <div class="vm-column">
-                <h3>Visi</h3>
-                <p>Terwujudnya FMKD Jakarta Raya yang berintegritas, bersinergi, progresif, dan transparan dengan mengedepankan aspek kekeluargaan dan profesionalisme berlandaskan Pancasila, UUD 1945, dan Tri Dharma Perguruan Tinggi.</p>
+    <section class="section-padding bg-pattern">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2>Visi & Misi</h2>
             </div>
-            <div class="vm-column">
-                <h3>Misi</h3>
-                <ol>
-                    <li>Membangun komunikasi dan koordinasi yang baik untuk terciptanya sinergitas antar anggota FMKD Jakarta Raya</li>
-                    <li>Beradaptasi dengan teknologi informasi sesuai dengan perkembangan zaman.</li>
-                    <li>Menjadi wadah silaturahmi dan sarana pengembangan minat, bakat, dan kompetensi.</li>
-                    <li>Mengabdi kepada masyarakat, bangsa dan negara.</li>
-                    <li>Meningkatkan profesionalisme, integritas, dan cinta tanah air.</li>
-                    <li>Membentuk dan menanamkan karakter kepemimpinan bagi anggota FMKD Jakarta Raya untuk menciptakan kader penerus generasi bangsa.</li>
-                </ol>
+            <div class="vm-grid">
+                <div class="vm-card" data-aos="fade-right" data-aos-delay="100">
+                    <div class="icon-header"><i class="fa-solid fa-eye"></i> Visi</div>
+                    <p>Terwujudnya FMKD Jakarta Raya yang berintegritas, bersinergi, progresif, dan transparan dengan mengedepankan aspek kekeluargaan dan profesionalisme.</p>
+                </div>
+                <div class="vm-card" data-aos="fade-left" data-aos-delay="200">
+                    <div class="icon-header"><i class="fa-solid fa-bullseye"></i> Misi</div>
+                    <ol>
+                        <li>Membangun komunikasi dan koordinasi sinergis.</li>
+                        <li>Beradaptasi dengan teknologi informasi terkini.</li>
+                        <li>Wadah pengembangan minat, bakat, dan kompetensi.</li>
+                        <li>Mengabdi kepada masyarakat dan negara.</li>
+                        <li>Membentuk karakter kepemimpinan kader bangsa.</li>
+                    </ol>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-    <!-- Programs Section -->
-    <section id="programs" class="programs">
+    <section id="programs" class="section-padding">
         <div class="container">
-            <h2>Program & Kegiatan Kami</h2>
-            <p>FMKD Jakarta Raya berkomitmen untuk memberikan wadah dan pengalaman bagi para mahasiswa kedinasan melalui berbagai program dan kegiatan.</p>
-            <div class="program-list">
-                <div class="program-item">
+            <div class="section-title" data-aos="fade-up">
+                <h2>Program Unggulan</h2>
+            </div>
+            <p class="text-center mb-2" data-aos="fade-up">Komitmen kami dalam memberikan pengalaman terbaik.</p>
+            
+            <div class="grid-3">
+                <div class="card program-card" data-aos="flip-left" data-aos-delay="0">
+                    <div class="card-icon"><i class="fa-solid fa-laptop-code"></i></div>
                     <h3>Webinar</h3>
-                    <p>Pembelajaran dan diskusi bersama narasumber ahli.</p>
+                    <p>Diskusi interaktif bersama narasumber ahli dan praktisi.</p>
                 </div>
-                <div class="program-item">
-                    <h3>Gathering Internal</h3> <!-- Nama diubah -->
-                    <p>Kumpul seru dan mempererat tali silaturahmi.</p>
+                <div class="card program-card" data-aos="flip-left" data-aos-delay="100">
+                    <div class="card-icon"><i class="fa-solid fa-users"></i></div>
+                    <h3>Gathering</h3>
+                    <p>Mempererat solidaritas dan silaturahmi antar anggota.</p>
                 </div>
-                <div class="program-item">
+                <div class="card program-card" data-aos="flip-left" data-aos-delay="200">
+                    <div class="card-icon"><i class="fa-solid fa-handshake"></i></div>
                     <h3>Audiensi</h3>
-                    <p>Komunikasi dengan pihak terkait untuk pengembangan organisasi.</p>
+                    <p>Sinergi dengan instansi pemerintah untuk pengembangan organisasi.</p>
                 </div>
-                <div class="program-item">
+                <div class="card program-card" data-aos="flip-left" data-aos-delay="300">
+                    <div class="card-icon"><i class="fa-solid fa-bus"></i></div>
                     <h3>Kunjungan Kerja</h3>
-                    <p>Belajar langsung dari organisasi lain.</p>
+                    <p>Studi banding dan belajar langsung dari organisasi lain.</p>
                 </div>
-                <!-- Tambahkan item lain sesuai kebutuhan -->
-            </div>
-            <!-- Tombol "Lihat Semua Kegiatan" dihapus -->
-        </div>
-    </section>
-
-    <!-- Membership Section -->
-    <section id="membership" class="membership">
-        <div class="container">
-            <h2>Anggota FMKD Jakarta Raya</h2>
-            <p>FMKD Jakarta Raya terdiri dari mahasiswa dari berbagai Perguruan Tinggi Kedinasan di wilayah Jabodetabek.</p>
-         <div class="ptk-gallery">
-            <div class="ptk-item">
-                <img src="/assets/member/Logo_Politeknik_Ketenagakerjaan.png" alt="Logo polteknaker" class="ptk-logo">
-                <p>Politeknik Ketenagakerjaan</p>
-            </div>
-            <div class="ptk-item">
-                <img src="/assets/member/Logo Polbangtan Bogor.jpeg" alt="Logo Polbangtan" class="ptk-logo">
-                <p>Politeknik Pembangunan Pertanian Bogor</p>
-            </div>
-            <div class="ptk-item">
-                <img src="/assets/member/Logo Poltekpin.png" alt="Logo POLTEKPIN" class="ptk-logo">
-                <p>Politeknik Pengayoman Indonesia</p>
-            </div>
-            <div class="ptk-item">
-                <img src="/assets/member/Logo STIS.jpeg" alt="Logo stis" class="ptk-logo">
-                <p>Politeknik Statistika STIS</p>
-             </div>
-             <div class="ptk-item">
-                <img src="/assets/member/Logo STPN Jogja.jpeg" alt="Logo stpn" class="ptk-logo">
-                <p>Sekolah Tinggi Pertanahan Nasional</p>
-            </div>
-            <div class="ptk-item">
-                <img src="/assets/member/Logo PPI Madiun.png" alt="Logo PPI Madiun" class="ptk-logo">
-                <p>Politeknik Perkeretaapian Indonesia Madiun</p>
-            </div>
-            <div class="ptk-item">
-                <img src="/assets/member/Logo Poltek SSN.png" alt="Logo ssn" class="ptk-logo">
-                <p>Politeknik Siber dan Sandi Negara</p>
-            </div>
-            <div class="ptk-item">
-                <img src="/assets/member/Logo PEPI Serpong.png" alt="Logo stis" class="ptk-logo">
-                <p>Politeknik Enjinering Pertanian Indonesia</p>
-            </div>
-            <div class="ptk-item">
-                <img src="/assets/member/Logo PEM Akamigas.png" alt="Logo PEM Akamigas" class="ptk-logo">
-                <p>Politeknik Energi Mineral Akademi Minyak Dan Gas Cepu</p>
-            </div>
-            <div class="ptk-item">
-                <img src="/assets/member/Logo Poltek KP Karawang.jpeg" alt="Logo KP Karawang" class="ptk-logo">
-                <p>Politeknik Kelautan Perikanan Karawang</p>
-            </div>
-            <div class="ptk-item">
-                <img src="/assets/member/Logo Poltek KP Sidoarjo.png" alt="Logo KP Sidoarjo" class="ptk-logo">
-                <p>Politeknik Kelautan Perikanan Sidoarjo</p>
-            </div>
-            <div class="ptk-item">
-                <img src="/assets/member/Logo Poltek Nuklir.png" alt="Logo Nuklir" class="ptk-logo">
-                <p>Politeknik Teknologi Nuklir Indonesia</p>
-            </div>
-            <div class="ptk-item">
-                <img src="/assets/member/Logo Poltek STTT Bandung.jpeg" alt="Logo KP STTT" class="ptk-logo">
-                <p>Sekolah Tinggi Teknologi Tekstil Bandung</p>
-            </div>
-            <div class="ptk-item">
-                <img src="/assets/member/Logo Poltrada Bali.png" alt="Logo poltrada" class="ptk-logo">
-                <p>Politeknik Transportasi Darat Bali</p>
-            </div>
-            <div class="ptk-item">
-                <img src="/assets/member/Logo Poltekbang Medan.png"alt="Logo Nuklir" class="ptk-logo">
-                <p>Politeknik Penerbangan Medan</p>
-            </div>
-            <div class="ptk-item">
-                <img src="/assets/member/Logo_Politeknik_KP_Pangandaran.png"alt="Logo KP Pangandaran" class="ptk-logo">
-                <p>Politeknik KP Pangandaran</p>
-            </div>
-            <div class="ptk-item">
-                <img src="/assets/member/Logo Poltek AUP.png"alt="Logo AUP" class="ptk-logo">
-                <p>Politeknik Ahli Usaha Perikanan</p>
             </div>
         </div>
     </section>
 
-    <!-- PTK Expo Section -->
-    <section id="ptk-expo" class="ptk-expo">
+    <section id="membership" class="section-padding bg-light">
         <div class="container">
-            <h2>PTK Expo FMKD Jakarta Raya</h2>
-            <p>PTK Expo adalah ajang tahunan yang diselenggarakan oleh Forum Mahasiswa Kedinasan Daerah (FMKD) Jakarta Raya. Acara ini bertujuan memperkenalkan berbagai Perguruan Tinggi Kedinasan (PTK) kepada masyarakat, khususnya calon mahasiswa yang tengah mempersiapkan diri menghadapi seleksi masuk perguruan tinggi.</p>
-            <div class="expo-stats">
-                <div class="stat">
-                    <div class="counter" data-target="483">0</div>
-                    <span class="plus-sign">+</span>
-                    <span class="label">Peserta</span>
-                </div>
-                <div class="stat">
-                    <div class="counter" data-target="14">0</div>
-                    <span class="label">PTK Partisipan</span>
-                </div>
+            <div class="section-title" data-aos="fade-up">
+                <h2>Anggota Kami</h2>
             </div>
-            <p>Target utama peserta dari kegiatan ini adalah siswa/i SMA/SMK/sederajat se-Jabodetabek.</p>
-            <!-- Tombol "Info Lengkap PTK Expo" - Ditengahkan dan di-link ke sosmed -->
-            <div class="center-button">
-                <a href="https://www.instagram.com/ptkexpofmkdjr2025?igsh=MW93bXk5emFicjMxNA==" target="_blank" class="btn btn-primary">Info Lengkap PTK Expo</a>
+            
+            <div class="logo-grid">
+                <div class="logo-item hover-zoom" data-aos="zoom-in" data-aos-delay="0"><img src="assets/member/Logo_Politeknik_Ketenagakerjaan.png" alt="Polteknaker" loading="lazy"><p>Politeknik Ketenagakerjaan</p></div>
+                <div class="logo-item hover-zoom" data-aos="zoom-in" data-aos-delay="50"><img src="assets/member/Logo Polbangtan Bogor.jpeg" alt="Polbangtan" loading="lazy"><p>Politeknik Pembangunan Pertanian Bogor</p></div>
+                <div class="logo-item hover-zoom" data-aos="zoom-in" data-aos-delay="100"><img src="assets/member/Logo Poltekpin.png" alt="Poltekpin" loading="lazy"><p>Politeknik Pengayoman Indonesia</p></div>
+                <div class="logo-item hover-zoom" data-aos="zoom-in" data-aos-delay="150"><img src="assets/member/Logo STIS.jpeg" alt="STIS" loading="lazy"><p>Politeknik Statistika STIS</p></div>
+                <div class="logo-item hover-zoom" data-aos="zoom-in" data-aos-delay="200"><img src="assets/member/Logo STPN Jogja.jpeg" alt="STPN" loading="lazy"><p>Sekolah Tinggi Pertanahan Nasional</p></div>
+                <div class="logo-item hover-zoom" data-aos="zoom-in" data-aos-delay="250"><img src="assets/member/Logo PPI Madiun.png" alt="PPI" loading="lazy"><p>Politeknik Perkeretaapian Indonesia Madiun</p></div>
+                <div class="logo-item hover-zoom" data-aos="zoom-in" data-aos-delay="300"><img src="assets/member/Logo Poltek SSN.png" alt="SSN" loading="lazy"><p>Politeknik Siber dan Sandi Negara</p></div>
+                <div class="logo-item hover-zoom" data-aos="zoom-in" data-aos-delay="350"><img src="assets/member/Logo PEPI Serpong.png" alt="PEPI" loading="lazy"><p>Politeknik Enjinering Pertanian Indonesia</p></div>
+                <div class="logo-item hover-zoom" data-aos="zoom-in" data-aos-delay="400"><img src="assets/member/Logo PEM Akamigas.png" alt="PEM Akamigas" loading="lazy"><p>Politeknik Energi Mineral Akademi Minyak Dan Gas Cepu</p></div>
+                <div class="logo-item hover-zoom" data-aos="zoom-in" data-aos-delay="450"><img src="assets/member/Logo Poltek KP Karawang.jpeg" alt="KP Karawang" loading="lazy"><p>Politeknik Kelautan Perikanan Karawang</p></div>
+                <div class="logo-item hover-zoom" data-aos="zoom-in" data-aos-delay="500"><img src="assets/member/Logo Poltek KP Sidoarjo.png" alt="KP Sidoarjo" loading="lazy"><p>Politeknik Kelautan Perikanan Sidoarjo</p></div>
+                <div class="logo-item hover-zoom" data-aos="zoom-in" data-aos-delay="550"><img src="assets/member/Logo Poltek Nuklir.png" alt="Poltek Nuklir" loading="lazy"><p>Politeknik Teknologi Nuklir Indonesia</p></div>
+                <div class="logo-item hover-zoom" data-aos="zoom-in" data-aos-delay="600"><img src="assets/member/Logo Poltek STTT Bandung.jpeg" alt="STTT" loading="lazy"><p>Sekolah Tinggi Teknologi Tekstil Bandung</p></div>
+                <div class="logo-item hover-zoom" data-aos="zoom-in" data-aos-delay="650"><img src="assets/member/Logo Poltrada Bali.png" alt="Poltrada" loading="lazy"><p>Politeknik Transportasi Darat Bali</p></div>
+                <div class="logo-item hover-zoom" data-aos="zoom-in" data-aos-delay="700"><img src="assets/member/Logo Poltekbang Medan.png" alt="Poltekbang" loading="lazy"><p>Politeknik Penerbangan Medan</p></div>
+                <div class="logo-item hover-zoom" data-aos="zoom-in" data-aos-delay="750"><img src="assets/member/Logo_Politeknik_KP_Pangandaran.png" alt="KP Pangandaran" loading="lazy"><p>Politeknik KP Pangandaran</p></div>
+                <div class="logo-item hover-zoom" data-aos="zoom-in" data-aos-delay="800"><img src="assets/member/Logo Poltek AUP.png" alt="AUP" loading="lazy"><p>Politeknik Ahli Usaha Perikanan</p></div>
             </div>
         </div>
     </section>
 
-   <!-- Documentation Section -->
-<section id="documentation" class="documentation">
-    <div class="container">
-        <h2>Dokumentasi Kegiatan</h2>
-        <p>Berikut adalah galeri foto kegiatan FMKD Jakarta Raya.</p>
-        <div class="slider-container">
-            <div class="slider">
-                <!-- Gambar akan dimasukkan secara otomatis oleh JavaScript -->
+    <section id="ptk-expo" class="ptk-expo section-padding bg-light">
+        <div class="container text-center">
+            
+            <div class="section-title" data-aos="fade-down">
+                <h2>PTK Expo FMKD Jakarta Raya</h2>
             </div>
-            <!-- Indikator (opsional) -->
-            <div class="slider-indicators" id="indicators">
-                <!-- Indikator akan dibuat oleh JavaScript -->
-            </div>
-        </div>
-    </div>
-</section>
-
-    <!-- Partnerships Section - Grid Galeri -->
-<section id="partnerships" class="partnerships">
-    <div class="container">
-        <h2>Kerjasama & Dukungan</h2>
-        <p>FMKD Jakarta Raya telah menjalin kerjasama dan mendapatkan dukungan dari berbagai organisasi dan instansi.</p>
-        <div class="partners-gallery">
-            <!-- Contoh satu item -->
-            <div class="partner-item">
-                <img src="/assets/partner/Logo FMKI.png" alt="Logo FMKI" class="partner-logo">
-                <p>Forum Mahasiswa Kedinasan Indonesia</p>
-            </div>
-            <div class="partner-item">
-                <img src="/assets/partner/Logo FOKRI.jpeg" alt="Logo Fokri" class="partner-logo">
-                <p>Forum Kerjasama Rohani Islam Perguruan Tinggi Kedinasan</p>
-            </div>
-            <div class="partner-item">
-                <img src="/assets/partner/Logo Bakesbangpol DKI Jakarta.png" alt="Logo BAKESBANGPOL DKI JAKARTA" class="partner-logo">
-                <p>Badan Kesatuan Bangsa dan Politik Provinsi DKI Jakarta</p>
-            </div> 
-            <div class="partner-item">
-                <img src="/assets/partner/Logo Biro Pemerintahan Setdaprov DKI Jakarta.png" alt="Logo setda" class="partner-logo">
-                <p>Sekretariat Daerah Provinsi DKI Jakarta</p>
-            </div>
-            <div class="partner-item">
-                <img src="/assets/partner/Logo Disdik DKI Jakarta.png" alt="Logo disdik" class="partner-logo">
-                <p>Dinas Pendidikan DKI Jakarta</p>
-            </div>
-            <div class="partner-item">
-                <img src="/assets/partner/Logo BPBD DKI Jakarta.png" alt="Logo bpbd" class="partner-logo">
-                <p>Badan Penanggulangan Bencana Daerah DKI Jakarta</p>
-            </div>
-            <div class="partner-item">
-                <img src="/assets/partner/logo Bimbel Akses.jpg.png" alt="Logo Akses" class="partner-logo">
-                <p>Bimbel Akses</p>
-            </div>
-            <div class="partner-item">
-                <img src="/assets/partner/Logo BEM Polteknaker.png" alt="Logo Bem Naker" class="partner-logo">
-                <p>Badan Eksekutif Mahasiswa Politeknik Ketenagakerjaan</p>
-            </div>
-            <div class="partner-item">
-                <img src="/assets/partner/Logo BEM STIS.jpeg" alt="Logo bem stis" class="partner-logo">
-                <p>Badan Eksekutif Politeknik Statistika STIS</p>
-            </div> 
-            <div class="partner-item">
-                <img src="/assets/partner/Logo Hima MSDM Polteknaker.jpeg" alt="Logo hima naker" class="partner-logo">
-                <p>Himpunan Mahasiswa Manajemen Sumber Daya Manusia Politeknik Ketenagakerjaan</p>
-            </div>
-            <div class="partner-item">
-                <img src="/assets/partner/Logo HMJK Poltekkes III Jakarta.jpeg" alt="Logo hmjk poltekes" class="partner-logo">
-                <p>Himpunan Mahasiswa Jurusan Keperawatan Politeknik Kesehatan Jakarta III</p>
-            </div>
-            <div class="partner-item">
-                <img src="/assets/partner/Logo Forum OSIS Jakpus.png" alt="Logo osis jakpus" class="partner-logo">
-                <p>Forum OSIS Jakarta Pusat</p>
-            </div>
-            <div class="partner-item">
-                <img src="/assets/partner/Logo Forum OSIS Jaktim.jpg" alt="Logo osis jaktim" class="partner-logo">
-                <p>Forum OSIS Jakarta Timur</p>
-            </div>
-            <div class="partner-item">
-                <img src="/assets/partner/Logo Youth Ranger Jakarta.png" alt="Logo osis jakpus" class="partner-logo">
-                <p>Youth Ranger Jakarta</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-    <!-- Stats Section -->
-    <section class="stats">
-        <div class="container">
-            <h2>Jejak Langkah Kami</h2>
-            <div class="stats-grid">
+            
+            <p class="text-center mb-2" style="max-width: 800px; margin-inline: auto;">
+                PTK Expo adalah ajang tahunan yang diselenggarakan oleh FMKD Jakarta Raya. Acara ini bertujuan memperkenalkan berbagai Perguruan Tinggi Kedinasan (PTK) kepada masyarakat, khususnya calon mahasiswa yang tengah mempersiapkan diri menghadapi seleksi masuk perguruan tinggi.
+            </p>
+            
+            <div class="expo-stats-row" data-aos="zoom-in" data-aos-delay="100">
                 
-                <div class="stat-box">
-                    <div class="counter" data-target="16">0</div>
-                    <p>Keanggotaan Aktif yang Tercatat</p>
+                <div class="expo-stat-item">
+                    <div class="expo-number">483+</div>
+                    <div class="expo-label">Peserta</div>
                 </div>
-    
-                <div class="stat-box">
-                    <div class="counter" data-target="61">0</div>
-                    <p>Lingkup Keanggotaan Meliputi Seluruh PTK di Bawah Naungan FMKI.</p>
+
+                <div class="expo-stat-item">
+                    <div class="expo-number">14</div>
+                    <div class="expo-label">PTK Partisipan</div>
                 </div>
-    
-                <div class="stat-box">
-                    <div class="counter" data-target="22">0</div>
-                    <span class="plus-sign">+</span>
-                    <p>Kegiatan</p>
-                </div>
-    
-                <div class="stat-box">
-                    <div class="counter" data-target="14">0</div>
-                    <p>Mitra</p>
-                </div>
-    
-                <div class="stat-box">
-                    <div class="counter" data-target="483">0</div>
-                    <span class="plus-sign">+</span>
-                    <p>Peserta PTK Expo</p>
-                </div>
-    
+
+            </div>
+            
+            <p class="mt-2 mb-2 text-muted">
+                Target utama peserta dari kegiatan ini adalah siswa/i SMA/SMK/sederajat se-Jabodetabek.
+            </p>
+            
+            <div class="center-button" data-aos="fade-up" data-aos-delay="200">
+                <a href="https://www.instagram.com/ptkexpofmkdjr2025?igsh=MW93bXk5emFicjMxNA==" target="_blank" rel="noopener noreferrer" class="btn btn-primary pulse-anim">
+                    Info Lengkap PTK Expo
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="documentation" class="section-padding bg-dark">
+        <div class="container">
+            <div class="section-title white" data-aos="fade-up">
+                <h2>Dokumentasi Kegiatan</h2>
+            </div>
+            
+            <div class="slider-wrapper" data-aos="zoom-in">
+                <div class="slider"></div>
+                <div class="slider-indicators" id="indicators"></div>
             </div>
         </div>
     </section>
-    <!-- Contact Section -->
-<section id="contact" class="contact">
-    <div class="container">
-        <h2>Kontak</h2>
-        <!-- Informasi Kontak Utama -->
-        <div class="contact-main">
-            <div class="info-box">
-                <h3>Alamat</h3>
-                <p>Politeknik Ketenagakerjaan, Jl. Pengantin Ali No.71A, RT.7/RW.6, Ciracas, Kec. Ciracas, Kota Jakarta Timur, Daerah Khusus Ibukota Jakarta 13740</p>
-            </div>
-            <div class="info-box">
-                <h3>Contact Person</h3>
-                <p>085710841419 (Admin FMKD Jakarta Raya)</p>
-            </div>
-        </div>
-        
-        <!-- Sosial Media Icons (Logo Only) -->
-        <div class="social-media-icons">
-            <!-- Email -->
-            <a href="mailto:fmkdjakartaraya@gmail.com" target="_blank" class="social-icon">
-                <img src="/assets/sosmeds/logo email.png" alt="Email">
-            </a>
-            <!-- Instagram -->
-            <a href="https://www.instagram.com/fmkdjakartaraya/" target="_blank" class="social-icon">
-                <img src="/assets/sosmeds/logo instagram.jpg">
-            </a>
-            <!-- TikTok -->
-            <a href="https://www.tiktok.com/@fmkd.jakartaraya" target="_blank" class="social-icon">
-                <img src="/assets/sosmeds/logo tiktok.jpg" alt="TikTok">
-            </a>
-            <!-- YouTube -->
-            <a href="https://www.youtube.com/@FMKDJakartaRaya" target="_blank" class="social-icon">
-                <img src="/assets/sosmeds/logo youtube.jpg" alt="YouTube">
-            </a>
-            <!-- WhatsApp -->
-            <a href="https://wa.me/6285710841419" target="_blank" class="social-icon">
-                <img src="/assets/sosmeds/logo wa.jpg" alt="WhatsApp">
-            </a>
-            <!-- Linkedn -->
-            <a href="https://www.linkedin.com/in/fmkdjakartaraya/" target="_blank" class="social-icon">
-                <img src="/assets/sosmeds/logo in.png" alt="Linkedn">
-            </a>
-        </div>
-    </div>
-</section>
 
-    <!-- Footer -->
+    <section id="partnerships" class="section-padding">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2>Kerjasama & Dukungan</h2>
+            </div>
+            
+            <div class="logo-grid small-grid">
+                
+                <div class="logo-item hover-zoom" data-aos="fade-up">
+                    <img src="assets/partner/Logo FMKI.png" alt="FMKI" loading="lazy">
+                    <p>Forum Mahasiswa Kedinasan Indonesia</p>
+                </div>
+
+                <div class="logo-item hover-zoom" data-aos="fade-up">
+                    <img src="assets/partner/Logo FOKRI.jpeg" alt="FOKRI" loading="lazy">
+                    <p>Forum Kerjasama Rohani Islam Perguruan Tinggi Kedinasan</p>
+                </div>
+
+                <div class="logo-item hover-zoom" data-aos="fade-up">
+                    <img src="assets/partner/Logo Bakesbangpol DKI Jakarta.png" alt="Bakesbangpol" loading="lazy">
+                    <p>Badan Kesatuan Bangsa dan Politik Provinsi DKI Jakarta</p>
+                </div>
+
+                <div class="logo-item hover-zoom" data-aos="fade-up">
+                    <img src="assets/partner/Logo Biro Pemerintahan Setdaprov DKI Jakarta.png" alt="Setda" loading="lazy">
+                    <p>Sekretariat Daerah Provinsi DKI Jakarta</p>
+                </div>
+
+                <div class="logo-item hover-zoom" data-aos="fade-up">
+                    <img src="assets/partner/Logo Disdik DKI Jakarta.png" alt="Disdik" loading="lazy">
+                    <p>Dinas Pendidikan DKI Jakarta</p>
+                </div>
+
+                <div class="logo-item hover-zoom" data-aos="fade-up">
+                    <img src="assets/partner/Logo BPBD DKI Jakarta.png" alt="BPBD" loading="lazy">
+                    <p>Badan Penanggulangan Bencana Daerah DKI Jakarta</p>
+                </div>
+
+                <div class="logo-item hover-zoom" data-aos="fade-up">
+                    <img src="assets/partner/logo Bimbel Akses.jpg.png" alt="Akses" loading="lazy">
+                    <p>Bimbel Akses</p>
+                </div>
+
+                <div class="logo-item hover-zoom" data-aos="fade-up">
+                    <img src="assets/partner/Logo BEM Polteknaker.png" alt="BEM Naker" loading="lazy">
+                    <p>Badan Eksekutif Mahasiswa Politeknik Ketenagakerjaan</p>
+                </div>
+
+                <div class="logo-item hover-zoom" data-aos="fade-up">
+                    <img src="assets/partner/Logo BEM STIS.jpeg" alt="BEM STIS" loading="lazy">
+                    <p>Badan Eksekutif Politeknik Statistika STIS</p>
+                </div>
+
+                <div class="logo-item hover-zoom" data-aos="fade-up">
+                    <img src="assets/partner/Logo Hima MSDM Polteknaker.jpeg" alt="Hima MSDM" loading="lazy">
+                    <p>Himpunan Mahasiswa Manajemen Sumber Daya Manusia Politeknik Ketenagakerjaan</p>
+                </div>
+
+                <div class="logo-item hover-zoom" data-aos="fade-up">
+                    <img src="assets/partner/Logo HMJK Poltekkes III Jakarta.jpeg" alt="HMJK" loading="lazy">
+                    <p>Himpunan Mahasiswa Jurusan Keperawatan Politeknik Kesehatan Jakarta III</p>
+                </div>
+
+                <div class="logo-item hover-zoom" data-aos="fade-up">
+                    <img src="assets/partner/Logo Forum OSIS Jakpus.png" alt="OSIS Jakpus" loading="lazy">
+                    <p>Forum OSIS Jakarta Pusat</p>
+                </div>
+
+                <div class="logo-item hover-zoom" data-aos="fade-up">
+                    <img src="assets/partner/Logo Forum OSIS Jaktim.jpg" alt="OSIS Jaktim" loading="lazy">
+                    <p>Forum OSIS Jakarta Timur</p>
+                </div>
+
+                <div class="logo-item hover-zoom" data-aos="fade-up">
+                    <img src="assets/partner/Logo Youth Ranger Jakarta.png" alt="Youth Ranger" loading="lazy">
+                    <p>Youth Ranger Jakarta</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section-padding bg-light-gradient">
+        <div class="container">
+            
+        <section id="stats" class="section-padding bg-pattern">
+            <div class="container">
+                <div class="section-title" data-aos="fade-up">
+                    <h2>Jejak Langkah Kami</h2>
+                </div>
+
+                <div class="stats-grid">
+                    
+                    <div class="stat-card" data-aos="flip-up" data-aos-delay="0">
+                        <div class="stat-icon"><i class="fa-solid fa-users-viewfinder"></i></div>
+                        <div class="stat-number">
+                            <span class="counter" data-target="16">0</span>
+                        </div>
+                        <p>Keanggotaan Aktif</p>
+                    </div>
+
+                    <div class="stat-card" data-aos="flip-up" data-aos-delay="100">
+                        <div class="stat-icon"><i class="fa-solid fa-school"></i></div>
+                        <div class="stat-number">
+                            <span class="counter" data-target="61">0</span>
+                        </div>
+                        <p>Lingkup PTK</p>
+                    </div>
+
+                    <div class="stat-card" data-aos="flip-up" data-aos-delay="200">
+                        <div class="stat-icon"><i class="fa-solid fa-calendar-check"></i></div>
+                        <div class="stat-number">
+                            <span class="counter" data-target="22">0</span><span>+</span>
+                        </div>
+                        <p>Kegiatan Terlaksana</p>
+                    </div>
+
+                    <div class="stat-card" data-aos="flip-up" data-aos-delay="300">
+                        <div class="stat-icon"><i class="fa-solid fa-handshake"></i></div>
+                        <div class="stat-number">
+                            <span class="counter" data-target="14">0</span>
+                        </div>
+                        <p>Mitra Kerjasama</p>
+                    </div>
+
+                    <div class="stat-card" data-aos="flip-up" data-aos-delay="400">
+                        <div class="stat-icon"><i class="fa-solid fa-users"></i></div>
+                        <div class="stat-number">
+                            <span class="counter" data-target="483">0</span><span>+</span>
+                        </div>
+                        <p>Peserta PTK Expo</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+            <div class="contact-wrapper mt-2" data-aos="fade-up">
+                <div class="section-title"><h2>Hubungi Kami</h2></div>
+                <p class="text-center">Politeknik Ketenagakerjaan, Jl. Pengantin Ali No.71A, Ciracas, Jakarta Timur.</p>
+                <div class="social-links mt-2">
+                    <a href="mailto:fmkdjakartaraya@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+                    <a href="https://www.instagram.com/fmkdjakartaraya/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com/@fmkd.jakartaraya" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="https://www.youtube.com/@FMKDJakartaRaya" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="https://wa.me/6285710841419" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="https://www.linkedin.com/in/fmkdjakartaraya/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <footer class="footer">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <!-- Ganti path/to/logo-fmkd.png dengan path sebenarnya ke logo Anda -->
-                    <img src="/assets/headfoot/Logo FMKD Jakarta Raya.png" alt="Logo FMKD Jakarta Raya">
-                </div>
-                <div class="footer-links">
-                    <ul>
-                        <li><a href="#home">Beranda</a></li>
-                        <li><a href="#about">Tentang Kami</a></li>
-                        <li><a href="#programs">Program</a></li>
-                        <li><a href="#ptk-expo">PTK Expo</a></li>
-                        <li><a href="#documentation">Dokumentasi</a></li>
-                        <li><a href="#partnerships">Kerjasama</a></li>
-                        <li><a href="#contact">Kontak</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Forum Mahasiswa Kedinasan Daerah (FMKD) Jakarta Raya. All Rights Reserved.</p>
-            </div>
+            <p>&copy; 2025 Forum Mahasiswa Kedinasan Daerah (FMKD) Jakarta Raya. All Rights Reserved.</p>
         </div>
     </footer>
 
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="main.js"></script>
 </body>
 </html>
