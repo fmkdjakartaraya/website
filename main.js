@@ -1,206 +1,209 @@
-// Fungsi untuk Animasi Counter (Sederhana)
-function animateCounter() {
-    const counters = document.querySelectorAll('.counter');
-    const speed = 200; // Kecepatan animasi (semakin kecil, semakin cepat)
+document.addEventListener("DOMContentLoaded", function() {
     
-    counters.forEach(counter => {
-        const updateCount = () => {
-            const target = +counter.getAttribute('data-target');
-            const count = +counter.innerText;
-            
-            // Hitung langkah animasi
-            const increment = target / speed;
-            
-            if (count < target) {
-                counter.innerText = Math.ceil(count + increment);
-                setTimeout(updateCount, 10); // Update setiap 10ms
-            } else {
-                counter.innerText = target; // Pastikan angka akhir tepat
-            }
-        };
-        
-        // Gunakan Intersection Observer untuk memulai animasi saat elemen terlihat
-        const observer = new IntersectionObserver((entries, obs) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    updateCount();
-                    obs.unobserve(entry.target); // Hentikan observasi setelah animasi dimulai
-                }
-            });
-        }, { threshold: 0.5 }); // Mulai animasi ketika 50% elemen terlihat
-        
-        observer.observe(counter);
-    });
-}
-
-// Fungsi untuk Inisialisasi Slider Otomatis dengan Fade
-function initImageSlider() {
-    // --- GANTI ARRAY INI DENGAN PATH FOTO DOKUMENTASI ANDA ---
-    const imagePaths = [
-        '/assets/dokum/Audiensi Bakesbangpol DKI Jakarta.jpg',
-        '/assets/dokum/Audiensi BPBD Provinsi.jpg',
-        '/assets/dokum/Audiensi Dinas Pendidikan 2025.jpg',
-        '/assets/dokum/Dokumentasi Bimbel Akses 1.jpg',
-        '/assets/dokum/akses2.jpg',
-        '/assets/dokum/FMKD Jakarta Raya Youth Gathering Vol 1.jpg',
-        '/assets/dokum/FMKD Youth Gathering Vol. 2.jpg',
-        '/assets/dokum/Kehadiran Rakernas Fokri.jpg',
-        '/assets/dokum/Kunjungan Kerja Antara heritage.jpg',
-        '/assets/dokum/Kunjungan kerja BEM Polteknaker 2024.jpg',
-        '/assets/dokum/Kunjungan Kerja STIS.jpg',
-        '/assets/dokum/kunjungan polteknaker.jpg',
-        '/assets/dokum/Pembukaan Booth FMKD Jakarta Raya di Edufair Dinas Pendidikan.jpg',
-        '/assets/dokum/Penandatanganan MoU.jpg',
-        '/assets/dokum/PTK Expo FMKD Jakarta Raya.jpg',
-        '/assets/dokum/Webinar FMKD Jakarta Raya 2025.png',
-        // Tambahkan path gambar lainnya di sini
-    ];
-    // --- SAMPAI SINI ---
-    
-    const sliderElement = document.querySelector('.slider');
-    const indicatorsContainer = document.getElementById('indicators');
-    
-    if (!sliderElement || !indicatorsContainer) {
-        console.error('Slider elements not found.');
-        return;
+    // ---------------------------------------------------------
+    // 1. INITIALIZE AOS ANIMATION
+    // ---------------------------------------------------------
+    if (typeof AOS !== 'undefined') {
+        AOS.init({
+            once: true, offset: 100, duration: 800, easing: 'ease-out-cubic',
+        });
     }
+
+    // ---------------------------------------------------------
+    // 2. MOBILE MENU (HAMBURGER)
+    // ---------------------------------------------------------
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.querySelector('.nav-menu');
+    const navLinks = document.querySelectorAll('.nav-menu a');
+
+    if (hamburger) {
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+    }
+
+    // ---------------------------------------------------------
+    // 3. STATS COUNTER
+    // ---------------------------------------------------------
+    const counters = document.querySelectorAll('.counter');
+    const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const el = entry.target;
+                const target = +el.getAttribute('data-target');
+                const duration = 2000; 
+                const increment = target / (duration / 16);
+                
+                let current = 0;
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        el.innerText = target;
+                        clearInterval(timer);
+                    } else {
+                        el.innerText = Math.ceil(current);
+                    }
+                }, 16);
+                obs.unobserve(el);
+            }
+        });
+    }, { threshold: 0.5 });
+    counters.forEach(counter => observer.observe(counter));
+
+    // ---------------------------------------------------------
+    // 4. IMAGE SLIDER (FULL FEATURE: ARROWS, SWIPE, PAUSE)
+    // ---------------------------------------------------------
     
-    let currentIndex = 0;
-    let slideInterval;
-    
-    // Fungsi untuk membuat slider dan indikator
-    function renderSlider() {
-        sliderElement.innerHTML = ''; // Kosongkan konten sebelumnya
-        indicatorsContainer.innerHTML = ''; // Kosongkan indikator sebelumnya
+    // DATA GAMBAR LENGKAP
+    const imagePaths = [
+        'assets/dokum/Audiensi Bakesbangpol DKI Jakarta.jpg',
+        'assets/dokum/Audiensi BPBD Provinsi.jpg',
+        'assets/dokum/Audiensi Dinas Pendidikan 2025.jpg',
+        'assets/dokum/Dokumentasi Bimbel Akses 1.jpg',
+        'assets/dokum/akses2.jpg',
+        'assets/dokum/FMKD Jakarta Raya Youth Gathering Vol 1.jpg',
+        'assets/dokum/FMKD Youth Gathering Vol. 2.jpg',
+        'assets/dokum/Kehadiran Rakernas Fokri.jpg',
+        'assets/dokum/Kunjungan Kerja Antara heritage.jpg',
+        'assets/dokum/Kunjungan kerja BEM Polteknaker 2024.jpg',
+        'assets/dokum/Kunjungan Kerja STIS.jpg',
+        'assets/dokum/kunjungan polteknaker.jpg',
+        'assets/dokum/Pembukaan Booth FMKD Jakarta Raya di Edufair Dinas Pendidikan.jpg',
+        'assets/dokum/Penandatanganan MoU.jpg',
+        'assets/dokum/PTK Expo FMKD Jakarta Raya.jpg',
+        'assets/dokum/Webinar FMKD Jakarta Raya 2025.png',
+        'assets/dokum/FMKD-2025.jpeg',
+        'assets/dokum/PTK-EXPO2025.jpeg',
+        'assets/dokum/Upacara Hari Bela Negara Badan Kesatuan Bangsa Dan Politik DKI Jakarta.jpeg',
+        'assets/dokum/Rapat Koordinasi Persiapan Upacara Hari Bela Negara Badan Kesatuan Bangsa Dan Politik DKI Jakarta.jpeg'
+    ];
+
+    const sliderWrapper = document.querySelector('.slider-wrapper');
+    const sliderContainer = document.querySelector('.slider');
+    const indicatorsContainer = document.getElementById('indicators');
+
+    if (sliderContainer && indicatorsContainer && imagePaths.length > 0) {
         
+        // A. BERSIHKAN CONTAINER
+        sliderContainer.innerHTML = '';
+        indicatorsContainer.innerHTML = '';
+
+        // B. RENDER GAMBAR & DOTS
         imagePaths.forEach((path, index) => {
+            // Gambar
             const img = document.createElement('img');
             img.src = path;
-            img.alt = `Dokumentasi Kegiatan ${index + 1}`;
-            img.loading = 'lazy';
-            
-            // Tambahkan event listener untuk error handling (opsional)
-            img.onerror = function() {
-                console.error("Gagal memuat gambar: " + path);
-                // Anda bisa menambahkan placeholder image di sini jika diinginkan
-                // this.src = 'path/to/placeholder.jpg';
-                // this.alt = 'Gambar Tidak Tersedia';
-            };
-            
-            if (index === 0) {
-                img.classList.add('active'); // Tampilkan gambar pertama
-            }
-            sliderElement.appendChild(img);
-            
-            const indicator = document.createElement('div');
-            indicator.classList.add('slider-indicator');
-            if (index === 0) {
-                indicator.classList.add('active');
-            }
-            indicator.dataset.index = index;
-            indicator.addEventListener('click', () => goToSlide(index));
-            indicatorsContainer.appendChild(indicator);
-        });
-    }
-    
-    // Fungsi untuk pindah ke slide tertentu
-    function goToSlide(index) {
-        if (index < 0) index = imagePaths.length - 1;
-        if (index >= imagePaths.length) index = 0;
-        
-        // Sembunyikan gambar saat ini
-        const currentImg = sliderElement.children[currentIndex];
-        const currentIndicator = indicatorsContainer.children[currentIndex];
-        if (currentImg) currentImg.classList.remove('active');
-        if (currentIndicator) currentIndicator.classList.remove('active');
-        
-        // Tampilkan gambar target
-        const targetImg = sliderElement.children[index];
-        const targetIndicator = indicatorsContainer.children[index];
-        if (targetImg) targetImg.classList.add('active');
-        if (targetIndicator) targetIndicator.classList.add('active');
-        
-        currentIndex = index;
-        resetSlideInterval(); // Reset timer saat pengguna mengklik indikator
-    }
-    
-    // Fungsi untuk pindah ke slide berikutnya
-    function nextSlide() {
-        goToSlide(currentIndex + 1);
-    }
-    
-    // Fungsi untuk memulai interval otomatis
-    function startSlideInterval() {
-        // Ganti gambar setiap 5 detik tampil + 1 detik transisi = 6000ms (6 detik total)
-        slideInterval = setInterval(nextSlide, 6000);
-    }
-    
-    // Fungsi untuk menghentikan dan memulai ulang interval
-    function resetSlideInterval() {
-        clearInterval(slideInterval);
-        startSlideInterval();
-    }
-    
-    // Inisialisasi
-    renderSlider();
-    startSlideInterval();
-}
+            img.alt = `Dokumentasi ${index + 1}`;
+            if (index === 0) img.classList.add('active');
+            sliderContainer.appendChild(img);
 
-// Lazy Loading Gambar
-function initLazyLoading() {
-    const images = document.querySelectorAll("img[loading='lazy']");
-    
-    if ('IntersectionObserver' in window) {
-        const imageObserver = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const img = entry.target;
-                    // img.src = img.dataset.src; // Jika menggunakan placeholder
-                    // img.srcset = img.dataset.srcset; // Jika menggunakan srcset
-                    img.classList.remove("lazy");
-                    observer.unobserve(img);
-                }
+            // Indikator Dot
+            const dot = document.createElement('div');
+            dot.classList.add('indicator');
+            if (index === 0) dot.classList.add('active');
+            dot.addEventListener('click', () => {
+                goToSlide(index);
+                resetTimer();
             });
+            indicatorsContainer.appendChild(dot);
         });
-        
-        images.forEach(img => {
-            imageObserver.observe(img);
-        });
-    } else {
-        // Fallback jika Intersection Observer tidak didukung
-        const preloadImages = () => {
-            images.forEach(img => {
-                img.src = img.src; // Trigger load
-                img.classList.remove("lazy");
-            });
-        };
-        window.addEventListener("load", preloadImages);
-    }
-}
 
-// Smooth Scrolling untuk anchor link
-function initSmoothScrolling() {
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
+        // C. BUAT TOMBOL NAVIGASI (PANAH)
+        const prevBtn = document.createElement('button');
+        prevBtn.className = 'slider-btn prev-btn';
+        prevBtn.innerHTML = '<i class="fa-solid fa-chevron-left"></i>'; // Pake FontAwesome
+        prevBtn.ariaLabel = "Slide Sebelumnya";
+
+        const nextBtn = document.createElement('button');
+        nextBtn.className = 'slider-btn next-btn';
+        nextBtn.innerHTML = '<i class="fa-solid fa-chevron-right"></i>'; // Pake FontAwesome
+        nextBtn.ariaLabel = "Slide Berikutnya";
+
+        sliderWrapper.appendChild(prevBtn);
+        sliderWrapper.appendChild(nextBtn);
+
+        // D. LOGIC SLIDER
+        const slides = document.querySelectorAll('.slider img');
+        const indicators = document.querySelectorAll('.indicator');
+        let currentSlide = 0;
+        let slideInterval;
+
+        function goToSlide(n) {
+            slides[currentSlide].classList.remove('active');
+            indicators[currentSlide].classList.remove('active');
             
-            const targetId = this.getAttribute('href');
-            const targetElement = document.querySelector(targetId);
+            // Logic looping (kalau -1 jadi terakhir, kalau lebih jadi 0)
+            currentSlide = (n + slides.length) % slides.length;
             
-            if (targetElement) {
-                window.scrollTo({
-                    top: targetElement.offsetTop - 70, // Offset untuk header
-                    behavior: 'smooth'
-                });
+            slides[currentSlide].classList.add('active');
+            indicators[currentSlide].classList.add('active');
+        }
+
+        function nextSlide() {
+            goToSlide(currentSlide + 1);
+        }
+
+        function prevSlide() {
+            goToSlide(currentSlide - 1);
+        }
+
+        function startTimer() {
+            slideInterval = setInterval(nextSlide, 4000); // 4 Detik
+        }
+
+        function resetTimer() {
+            clearInterval(slideInterval);
+            startTimer();
+        }
+
+        // Event Listener Tombol
+        nextBtn.addEventListener('click', () => {
+            nextSlide();
+            resetTimer();
+        });
+
+        prevBtn.addEventListener('click', () => {
+            prevSlide();
+            resetTimer();
+        });
+
+        // E. FITUR SWIPE (TOUCHSCREEN HP)
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        sliderWrapper.addEventListener('touchstart', e => {
+            touchStartX = e.changedTouches[0].screenX;
+        }, {passive: true});
+
+        sliderWrapper.addEventListener('touchend', e => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        }, {passive: true});
+
+        function handleSwipe() {
+            if (touchEndX < touchStartX - 50) {
+                nextSlide(); // Geser Kiri -> Next
+                resetTimer();
             }
-        });
-    });
-}
+            if (touchEndX > touchStartX + 50) {
+                prevSlide(); // Geser Kanan -> Prev
+                resetTimer();
+            }
+        }
 
-// Jalankan semua fungsi setelah DOM selesai dimuat
-document.addEventListener("DOMContentLoaded", function() {
-    animateCounter();
-    initImageSlider(); // Tambahkan inisialisasi slider
-    initLazyLoading();
-    initSmoothScrolling();
+        // F. FITUR PAUSE ON HOVER (Berhenti pas kursor nempel)
+        sliderWrapper.addEventListener('mouseenter', () => clearInterval(slideInterval));
+        sliderWrapper.addEventListener('mouseleave', startTimer);
+
+        // Mulai
+        startTimer();
+    }
 });
